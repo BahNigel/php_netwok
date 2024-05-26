@@ -1,0 +1,280 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 19, 2017 at 05:17 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `lte_fronthaul`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `administrateur`
+--
+
+CREATE TABLE IF NOT EXISTS `administrateur` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `niveau` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `administrateur`
+--
+
+INSERT INTO `administrateur` (`id`, `nom`, `photo`, `username`, `password`, `niveau`) VALUES
+(1, 'Boris', 'images/photos/sans image1957702127.png', 'boris', 'boris', 10),
+(2, 'Kenmogne Tamo Martial', '', 'admin', 'admin', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projet`
+--
+
+CREATE TABLE IF NOT EXISTS `projet` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `date_creation` datetime NOT NULL,
+  `date_consultation` datetime NOT NULL,
+  `date_modification` datetime NOT NULL,
+  `id_administrateur` int(11) DEFAULT NULL,
+  `nom_zone` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `surface_zone` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `type_zone` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `densite_zone` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `nom_enodeb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `puissance_enodeb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `gain_antenne_enodeb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `facteur_bruit_enodeb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `sinr_min_enodeb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debit_enodeb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `nom_ue` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `puissance_ue` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `gain_antenne_ue` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `facteur_bruit_ue` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `sinr_min_ue` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debit_max_ue` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `nom_scenario` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `alpha_ul_scenario` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `impfactor_ul_scenario` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `sinr_max_ul_scenario` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `alpha_dl_scenario` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `impfactor_dl_scenario` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `sinr_max_dl_scenario` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `detail_simul_scenario` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `pertes_ue` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `pertes_corps` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debit_uplink` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debit_downlink` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_rb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bp_rb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `pertes_feeder` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `marge_ev` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `marge_liaison` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `marge_i` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `marge_o` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `marge_p` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bp_cellule` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `mode_duplex` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `frequence` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `model_p` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `h_enodeb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `h_ue` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `type_site` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `attenuation` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rayon_cellule` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bruit_ue` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bruit_enodeb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_enodeb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `couverture` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `capacite` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `capex` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `opex` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `cartographie` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `interface_x1_s2` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bbu` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bbu1` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `contention_msg` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitul_msg` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitdl_msg` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `pourcentage_msg` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `contention_inf` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitul_inf` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitdl_inf` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `pourcentage_inf` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `contention_jeu` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitul_jeu` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitdl_jeu` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `pourcentage_jeu` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `contention_mc` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitul_mc` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitdl_mc` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `pourcentage_mc` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `contention_sic` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitul_sic` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitdl_sic` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `pourcentage_sic` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `contention_nav` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitul_nav` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitdl_nav` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `pourcentage_nav` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `contention_per` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitul_per` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitdl_per` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `pourcentage_per` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `contention_rd` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debit_ul` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debit_dl` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_site` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `debitul_rd` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `debitdl_rd` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pourcentage_rd` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `contention_tv` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `debitul_tv` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `debitdl_tv` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pourcentage_tv` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `contention_voix` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `debitul_voix` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `debitdl_voix` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pourcentage_voix` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `contention_msj` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `debitul_msj` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `debitdl_msj` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pourcentage_msj` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `heure_occ` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `trafic_UL_DL` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `trafic_moy` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `abon_par_eNodeB` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `T_R_UL` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `T_R_DL` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `ER` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `BH_Data_Trafic_subs_UL` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `BH_Data_Trafic_subs_DL` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Data_Trafic_Throughput_subs_UL` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Data_Trafic_Throughput_subs_DL` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `T_UL_Data_trafic_subs` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `T_DL_Data_trafic_subs` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `T_UL_user_plane_subs` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `T_DL_user_plane_subs` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `T_Total_user_plane_subs` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `plan_control` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `S1_bandW` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `X2_bandW` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `c_axc` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `n_axc` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `c_cpri` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `c_cpri_site` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `type_topo` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_canaux` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `sensibilite_recepteur` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `fenetre_optique` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `puissance_emission` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `type_fibre` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `connecteurs_optiques` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `distance_transport` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `attenuation_lineaire` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `attenuation_connecteur_optique` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `attenuation_totale` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_equipements` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `capacite_equipements` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `ing_radio` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `ing_reseau` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rech_four` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rech_site` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rout_ser_pass` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `inf_ip` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `log_appli` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `inf_voip` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bs_ant` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `fh_fob_cab` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `loc_sit` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `aq_terr` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `travaux` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `electrique` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `inst_sit` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rac_elec` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rac_ip` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `loc_mob` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `suiv_proj` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `s1` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `s2` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `s3` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `s4` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `capexval` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `loc_sit_total` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox3` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox4` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox5` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox17` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox18` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox19` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox20` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox21` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox22` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox23` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox24` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox25` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Editbox6` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_msg` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_inf` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_jeu` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_mc` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_sic` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_nav` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_per` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_rd` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_tvv` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_voix` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rev_msj` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rcet1` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rcet2` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rcet3` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rcet4` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `rcet5` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `opex1` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `opex2` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `opex3` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `opex4` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `opex5` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bene1` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bene2` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bene3` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bene4` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `bene5` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nom` (`nom`),
+  KEY `FK_projet_id_administrateur` (`id_administrateur`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `projet`
+--
+ALTER TABLE `projet`
+  ADD CONSTRAINT `FK_projet_id_administrateur` FOREIGN KEY (`id_administrateur`) REFERENCES `administrateur` (`id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,73 @@
+input[type=text],input[type=password],input[type=number],textarea{
+				border: solid 1px #AAA;
+				width:100%;
+				color:#e74c3c;
+				border-radius:50px;
+			}
+			textarea {
+				height:100px;
+				resize:none;
+			}
+			input[type=submit]{
+				background: #999/*#1e75aa*/;
+				-moz-box-shadow: 0 3px 1px #444/*#237bb2*/;
+				-webkit-box-shadow: 0 3px 1px #444/*#237bb2*/;
+				box-shadow: 0 3px 1px #444/*#237bb2*/;
+			}
+			input,textarea{
+				padding:10px;
+			}
+			legend{
+				color:#933;
+				font-size:18px;
+			}
+			select {
+				padding:10px;
+				border: solid 1px #AAA;
+				width:100%;
+				color:#e74c3c;
+			}
+			fieldset {
+				background: #f7f7f7;
+			}
+			form {
+				background: #fff;
+			}
+			.test {
+				padding:0px;
+			}
+			input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+			  color: #FF6555;
+			}
+			input:-moz-placeholder,textarea:-moz-placeholder {
+			  color: #e74c3c;
+			}
+			input::-moz-placeholder,textarea::-moz-placeholder {
+			  color: #e74c3c;
+			}
+			input:-ms-input-placeholder,textarea:-ms-input-placeholder {
+			  color: #e74c3c;
+			}
+			.mini-title {
+				border-bottom:#999 solid 1px;
+				font-size:14px;
+				font-weight:bold;
+				color:red;
+				margin-bottom:15px;
+			}
+			.mini-title2 {
+				font-size:14px;
+				text-align:center;
+				color:#777;
+				margin:10px;
+			}
+			.resultat-textarea {
+				background:#edd;
+			}
+			.resultat {
+				background:#caa;
+			}
+			.resultat-final {
+				font-size:14px;
+				background:#edd;
+			}

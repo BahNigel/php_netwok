@@ -1,0 +1,201 @@
+@import url(css/robot.css);
+.flat-form {
+  background: #e74c3c;
+  color: white;
+  /* margin: 25px auto; */
+  width: 390px;
+  height: 420px;
+  position: relative;
+  font-family: 'Roboto', Serif, Calibri;
+  border-radius: 10px;
+}
+.flat-form .tabs {
+  display: block;
+  background: #c0392b;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  position: relative;
+  list-style-type: none;
+  border-radius: 10px;
+}
+.flat-form .tabs li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.flat-form .tabs li a {
+  display: block;
+  background: #c0392b;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  float: left;
+  padding: 12px 22px;
+  border-radius: 10px;
+}
+.flat-form .tabs li a.active {
+  background: #e74c3c;
+  border-right: none;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.flat-form .tabs li a:hover {
+  background: #d65548;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.flat-form .tabs li:last-child a {
+  text-align: center;
+  width: 174px;
+  padding-left: 0;
+  padding-right: 0;
+  border-right: none;
+}
+.flat-form .form-action {
+  padding: 0 20px;
+  position: relative;
+}
+.flat-form h1 {
+  font-size: 42px;
+  padding-bottom: 10px;
+}
+.flat-form p {
+  font-size: 12px;
+  padding-bottom: 10px;
+  line-height: 25px;
+}
+.flat-form a {
+  color: yellow;
+  text-decoration: none;
+}
+.flat-form a:hover {
+  text-decoration: underline;
+}
+.flat-form form {
+  padding-right: 20px !important;
+}
+.flat-form form input[type=text], .flat-form form input[type=password], .flat-form form input[type=submit] {
+  font-family: 'Roboto', Serif, Calibri;
+}
+.flat-form form input[type=text], .flat-form form input[type=password] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  background: #fff;
+  border: none;
+  color: #e74c3c;
+  outline: none;
+  border-radius: 50px;
+}
+.flat-form div input.button {
+  border: none;
+  display: block;
+  background: #888/*#136899*/;
+  height: 40px;
+  width: 80px;
+  color: #ffffff;
+  text-align: center;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0px 3px 1px #aaa/*#2075aa*/;
+  -webkit-box-shadow: 0px 3px 1px #aaa/*#2075aa*/;
+  box-shadow: 0px 3px 1px #aaa/*#2075aa*/;
+  -moz-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  margin:auto;
+
+}
+
+.flat-form div form select {
+  border: none;
+  display: block;
+  background: #888/*#136899*/;
+  height: 20px;
+  width: 50px;
+  color: #ffffff;
+  text-align: center;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  margin-left: 5px;
+}
+.flat-form form input.button:hover {
+  background: #999/*#1e75aa*/;
+  -moz-box-shadow: 0 3px 1px #444/*#237bb2*/;
+  -webkit-box-shadow: 0 3px 1px #444/*#237bb2*/;
+  box-shadow: 0 3px 1px #444/*#237bb2*/;
+}
+.flat-form form input.button:active {
+  background: #777/*#136899*/;
+  @inclue box-shadow( 0 3px 1px #555/*#0f608c*/ );
+}
+.flat-form form input::-webkit-input-placeholder {
+  color: #FF6555;
+}
+.flat-form form input:-moz-placeholder {
+  color: #e74c3c;
+}
+.flat-form form input::-moz-placeholder {
+  color: #e74c3c;
+}
+.flat-form form input:-ms-input-placeholder {
+  color: #e74c3c;
+}
+.flat-form .show {
+  display: block;
+}
+.flat-form .hide {
+  display: none;
+}
+
+body {
+  background: /*url(images/background.png) no-repeat;*/#ddf;
+}
+/* input[type=text],input[type=password],input[type=number]{
+				border: solid 1px #AAA;
+				width:400px;
+			}
+			input{
+				padding:10px;
+			}
+			h1{
+				font-family:Verdana;
+				color:#050;
+				text-align:center;
+			}
+			h2{
+				font-family:Calibri;
+				color:#393;
+				font-size:50px;
+				text-align:center;
+			}
+			legend{
+				color:#339;
+			}
+			select {
+				padding:10px;
+				border: solid 1px #AAA;
+				width:423px;
+			}
+			fieldset {
+				background: #EEE;
+			}
+			.test {
+				padding:0px;
+			} */

@@ -1,0 +1,10 @@
+function kfacteur_deussom_yaounde($Lv, $f, $hb, $hm)
+{
+$E = 149-0.8-2.49*$hb-13.82*(log($hm) / log(10));
+$B = 44.9 - (6.55 * log($hb) / log(10));
+$A = $Lv-$E;
+$C = $A/$B;
+		$r = pow(10,$C);
+		 return $r;
+
+}
